@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>themeinthebox.com</title>
+    <!-- core CSS -->
+    <link href="assets/stylesheets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/stylesheets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/stylesheets/css/animate.min.css" rel="stylesheet">
+    <link href="assets/stylesheets/css/owl.carousel.css" rel="stylesheet">
+    <link href="assets/stylesheets/css/owl.transitions.css" rel="stylesheet">
+    <link href="assets/stylesheets/css/prettyPhoto.css" rel="stylesheet">
+    <link href="assets/stylesheets/css/main.css" rel="stylesheet">
+    <link href="assets/stylesheets/css/responsive.css" rel="stylesheet">
+    <!--[if lt IE 9]> <script src="assets/javascripts/html5shiv.js"></script> <script src="assets/javascripts/respond.min.js"></script> <![endif]-->
+    <link rel="shortcut icon" href="assets/images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/images/ico/apple-touch-icon-57-precomposed.png">
+  </head>
+  <!--/head-->
+
+  <body id="home" class="homepage">
+
+    <header id="top-header" class="navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <!-- responsive nav button -->
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!-- /responsive nav button -->
+
+          <!-- logo -->
+          <div class="navbar-brand">
+            <a class="smooth-scroll" data-section="#home" href="#home">
+              <img src="assets/images/logo.png" alt="OUTPOST">
+            </a>
+          </div>
+          <!-- /logo -->
+        </div>
+
+        <!-- main nav -->
+        <nav class="collapse navbar-collapse navbar-right" role="navigation">
+          <div class="main-menu">
+            <ul id="nav" class="nav navbar-nav">
+              <li class="scroll">
+                <a href="#home" data-section="#home">Home</a>
+              </li>
+              <li class="scroll">
+                <a href="#about" data-section="#about">About</a>
+              </li>
+              <li class="scroll">
+                <a href="#features" data-section="#features">Feature</a>
+              </li>
+              <li class="scroll">
+                <a href="#services" data-section="#services">Services</a>
+              </li>
+              <li class="scroll">
+                <a href="#portfolio" data-section="#portfolio">Portfolio</a>
+              </li>
+              <li class="scroll">
+                <a href="#contact-area" data-section="#contact-area">Contact</a>
+              </li>
+              <% if !current_user %>
+              <li><%= link_to(fa_icon("user-plus", text: "注册"), new_user_registration_path) %>
+              </li>
+              <li><%= link_to(fa_icon("sign-in", text: "登入"), new_user_session_path) %></li>
+            <% else %>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  Hi!,
+                  <%= current_user.email %>
+                  <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                  <% if current_user.admin? %>
+                  <li>
+                    <%= link_to(fa_icon("cogs", text: "管理选项"), admin_jobs_path) %>
+                  </li>
+                  <% end %>
+                  <li>
+                    <%= link_to(fa_icon("sign-out", text: "退出"), destroy_user_session_path, method: :delete) %>
+                  </li>
+                </ul>
+              </li>
+              <% end %>
+            </ul>
+          </div>
+        </nav>
+        <!-- /main nav -->
+
+      </div>
+    </header>
+
+    <section id="main-slider">
+      <div class="owl-carousel">
+        <div class="item" style="background-image: url(assets/images/slider/bg1.jpg);">
+          <div class="slider-inner">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="carousel-content text-center">
+                    <h2>相信自己会有好运是创造<span>「Serendipity」</span>的有效方法论.</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna incididunt ut labore aliqua.
+                    </p>
+                    <a class="btn btn-primary btn-lg" href="#">Read More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--/.item-->
+        <div class="item" style="background-image: url(assets/images/slider/bg2.jpg);">
+          <div class="slider-inner">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="carousel-content text-center">
+
+                    <h2>淡定的相信一个残缺的世界可以至少容纳下一个残缺的人
+                      <span>
+                        「<s>完美主义</s>」
+                      </span>
+                    </h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna incididunt ut labore aliqua.
+                    </p>
+                    <a class="btn btn-primary btn-lg" href="#">Read More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--/.item-->
+        <div class="item" style="background-image: url(assets/images/slider/bg3.jpg);">
+          <div class="slider-inner">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="carousel-content text-center">
+                    <h2>确信自己的判断，反对我的人越多越好
+                      <span>「特立独行且正确」</span>.</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna incididunt ut labore aliqua.
+                    </p>
+                    <a class="btn btn-primary btn-lg" href="#">Read More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--/.item-->
+
+      </div>
+      <!--/.owl-carousel-->
+    </section>
+    <!--/#main-slider-->
+
+    <section id="about">
+      <div class="container">
+
+        <div class="section-header">
+          <h2 class="section-title text-center wow fadeInDown">欢迎加入OUTPOST</h2>
+          <p class="text-center wow fadeInDown">OUTPOST直译「前哨」，源自《封神演义》第七九回:「前哨探马报入中军」。它凸显着领先于常人的觉知度与践行力。<br/>借鉴李笑来《什么是落后》中「1%之后全是落后」的观点，「前哨」志在成为那1%的人群之一。</p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-sm-6 wow fadeInRight">
+            <h3 class="column-title">关于 OUTPOST</h3>
+            <p>在<b>OUTPOST</b>，你将加入到一支出类拔萃、积极进取的概念打磨践行团队之中。<p>
+                <p>
+                  我们的团队成员彼此尊重并相互信任。在这里，每个人都要接受每一个朴素概念的洗礼，都会获得团队成员的支持。
+                </p>
+                <p>在这样一个人人平等、相互尊重的团队环境里，执着的你也有机会与更多战友建立深厚的友谊。这些人脉关系将为你未来的成长率提升之路打下坚实的基础！
+                </p>
+
+                <a class="btn btn-primary" href="#">Discover Us</a>
+
+              </div>
+              <div class="col-sm-6 wow fadeInLeft">
+                <img class="img-responsive" src="assets/images/feature-2.png" alt="">
+              </div>
+            </div>
+          </div>
+        </section>
+        <!--/#about-->
+
+        <section id="features">
+          <div class="container">
+            <div class="section-header">
+              <h2 class="section-title text-center wow fadeInDown">Awesome Features</h2>
+              <p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                <br>
+                et dolore magna aliqua. Ut enim ad minim veniam</p>
+            </div>
+            <div class="row">
+              <div class="col-sm-6 wow fadeInLeft">
+                <img class="img-responsive" src="assets/images/main-feature.png" alt="">
+              </div>
+              <div class="col-sm-6">
+                <div class="media service-box wow fadeInRight">
+                  <div class="pull-left">
+                    <i class="fa fa-line-chart"></i>
+                  </div>
+                  <div class="media-body">
+                    <h4 class="media-heading">UX design</h4>
+                    <p>Backed by some of the biggest names in the industry, Firefox OS is an open platform that fosters greater</p>
+                  </div>
+                </div>
+
+                <div class="media service-box wow fadeInRight">
+                  <div class="pull-left">
+                    <i class="fa fa-cubes"></i>
+                  </div>
+                  <div class="media-body">
+                    <h4 class="media-heading">UI design</h4>
+                    <p>Backed by some of the biggest names in the industry, Firefox OS is an open platform that fosters greater</p>
+                  </div>
+                </div>
+
+                <div class="media service-box wow fadeInRight">
+                  <div class="pull-left">
+                    <i class="fa fa-pie-chart"></i>
+                  </div>
+                  <div class="media-body">
+                    <h4 class="media-heading">SEO Services</h4>
+                    <p>Backed by some of the biggest names in the industry, Firefox OS is an open platform that fosters greater</p>
+                  </div>
+                </div>
+
+                <div class="media service-box wow fadeInRight">
+                  <div class="pull-left">
+                    <i class="fa fa-pie-chart"></i>
+                  </div>
+                  <div class="media-body">
+                    <h4 class="media-heading">SEO Services</h4>
+                    <p>Backed by some of the biggest names in the industry, Firefox OS is an open platform that fosters greater</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="cta2">
+          <div class="container">
+            <div class="text-center">
+              <h2 class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="0ms">YOU'VE MADE A brave DECISION,
+                <span>WELCOME</span>
+              </h2>
+              <p class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="100ms">Mauris pretium auctor quam. Vestibulum et nunc id nisi fringilla
+                <br/>iaculis. Mauris pretium auctor quam.</p>
+              <p class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="200ms">
+                <a class="btn btn-primary btn-lg" href="#">Get It Now</a>
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="services">
+          <div class="container">
+
+            <div class="section-header">
+              <h2 class="section-title text-center wow fadeInDown">我们的愿景</h2>
+              <p class="text-center wow fadeInDown">持续寻找具有共同价值观追求的同侪力量
+                <br>
+                通过刻意训练努力将自己打磨成为自己和他人的双重贵人</p>
+            </div>
+
+            <div class="row">
+              <div class="features">
+                <div class="col-sm-6 col-md-3 col-lg-3 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="0ms">
+                  <div class="features-item">
+                    <div class="features-icon">
+                      <i class="fa fa-bicycle"></i>
+                    </div>
+                    <h3 class="features-title font-alt">选择力</h3>
+                    添加必要的条件是正确选择的关键。你的价值观会影响筛选时所添加的必要条件，而所选结果又会反过来影响你的价值观。
+                  </div>
+                </div>
+
+                <div class="col-sm-6 col-md-3 col-lg-3 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="100ms">
+                  <div class="features-item">
+                    <div class="features-icon">
+                      <i class="fa fa-cubes"></i>
+                    </div>
+                    <h3 class="features-title font-alt">付费力</h3>
+                    将注意力放到能提升自身能力的事情上。为其赋予伟大意义逼自己拿出注意力与时间，进而拿钱去换取注意力与时间。
+                  </div>
+                </div>
+
+                <div class="col-sm-6 col-md-3 col-lg-3 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="200ms">
+                  <div class="features-item">
+                    <div class="features-icon">
+                      <i class="fa fa-connectdevelop"></i>
+                    </div>
+                    <h3 class="features-title font-alt">放弃力</h3>
+                    百分之百安全带来的是百分之百的束缚。主动放弃现有的安全感是自身成长突破的关键，作出自己的决定并为其负全责。
+                  </div>
+                </div>
+
+                <div class="col-sm-6 col-md-3 col-lg-3 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="300ms">
+                  <div class="features-item">
+                    <div class="features-icon">
+                      <i class="fa  fa-diamond"></i>
+                    </div>
+                    <h3 class="features-title font-alt">模仿力</h3>
+                    从开始就像大牛一样生活。最好的模仿不是向大牛学习，而是从一开始就按大牛的标准要求自己，绝不拿自己当业余选手。
+                  </div>
+                </div>
+
+                <div class="col-sm-6 col-md-3 col-lg-3 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="400ms">
+                  <div class="features-item">
+                    <div class="features-icon">
+                      <i class="fa fa-user-secret"></i>
+                    </div>
+                    <h3 class="features-title font-alt">耐压力</h3>
+                    成长过程中所遭遇到的所有的阻力与误会都是必经之路。默认没人支持你，把别人的鼓励都当做是额外赠送的。
+                  </div>
+                </div>
+
+                <div class="col-sm-6 col-md-3 col-lg-3 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="500ms">
+                  <div class="features-item">
+                    <div class="features-icon">
+                      <i class="fa fa-key"></i>
+                    </div>
+                    <h3 class="features-title font-alt">预测力</h3>
+                    尊重事实与相信逻辑是预测未来的两大基石。笃信自己的预测结果并按那个预测去行动、选择与思考，终将证明预测正确。
+                  </div>
+                </div>
+
+                <div class="col-sm-6 col-md-3 col-lg-3 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="600ms">
+                  <div class="features-item">
+                    <div class="features-icon">
+                      <i class="fa fa-laptop"></i>
+                    </div>
+                    <h3 class="features-title font-alt">镜像力</h3>
+                    一念之差，两个世界。是非善恶本是个人自我选择的镜像。你周围的人对你的反应其实是你在他们身上的投影。
+                  </div>
+                </div>
+
+                <div class="col-sm-6 col-md-3 col-lg-3 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="700ms">
+                  <div class="features-item">
+                    <div class="features-icon">
+                      <i class="fa fa-paw"></i>
+                    </div>
+                    <h3 class="features-title font-alt">关联力</h3>
+                    任何新知与新概念都不要被「与我无关」意识侵蚀，进步与成长的核心是不断习得并通过践行更新自己的概念与关联。
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <!--/.row-->
+          </div>
+          <!--/.container-->
+        </section>
+        <!--/#services-->
+
+        <section id="portfolio">
+          <div class="container">
+            <div class="section-header">
+              <h2 class="section-title text-center wow fadeInDown">Our Works</h2>
+              <p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                <br>
+                et dolore magna aliqua. Ut enim ad minim veniam</p>
+            </div>
+
+            <div class="text-center">
+              <ul class="portfolio-filter">
+                <li>
+                  <a class="active" href="#" data-filter="*">All Works</a>
+                </li>
+                <li>
+                  <a href="#" data-filter=".animation">Animation</a>
+                </li>
+                <li>
+                  <a href="#" data-filter=".Business">Business</a>
+                </li>
+                <li>
+                  <a href="#" data-filter=".art">Art</a>
+                </li>
+              </ul>
+              <!--/#portfolio-filter-->
+            </div>
+
+            <div class="portfolio-items">
+              <div class="portfolio-item animation">
+                <div class="portfolio-item-inner">
+                  <img class="img-responsive" src="assets/images/portfolio/01.jpg" alt="">
+                  <div class="portfolio-info">
+                    <h3>Portfolio Item 1</h3>
+                    <a class="preview" href="assets/images/portfolio/full.jpg" rel="prettyPhoto">
+                      <img src="assets/images/portfolio/expand.png" alt="">
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!--/.portfolio-item-->
+
+              <div class="portfolio-item Business art">
+                <div class="portfolio-item-inner">
+                  <img class="img-responsive" src="assets/images/portfolio/02.jpg" alt="">
+                  <div class="portfolio-info">
+                    <h3>Portfolio Item 2</h3>
+                    <a class="preview" href="assets/images/portfolio/full.jpg" rel="prettyPhoto">
+                      <img src="assets/images/portfolio/expand.png" alt="">
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!--/.portfolio-item-->
+
+              <div class="portfolio-item animation">
+                <div class="portfolio-item-inner">
+                  <img class="img-responsive" src="assets/images/portfolio/03.jpg" alt="">
+                  <div class="portfolio-info">
+                    <h3>Portfolio Item 3</h3>
+                    <a class="preview" href="assets/images/portfolio/full.jpg" rel="prettyPhoto">
+                      <img src="assets/images/portfolio/expand.png" alt="">
+
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!--/.portfolio-item-->
+
+              <div class="portfolio-item Business">
+                <div class="portfolio-item-inner">
+                  <img class="img-responsive" src="assets/images/portfolio/04.jpg" alt="">
+                  <div class="portfolio-info">
+                    <h3>Portfolio Item 4</h3>
+                    <a class="preview" href="assets/images/portfolio/full.jpg" rel="prettyPhoto">
+                      <img src="assets/images/portfolio/expand.png" alt="">
+
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!--/.portfolio-item-->
+
+              <div class="portfolio-item animation art">
+                <div class="portfolio-item-inner">
+                  <img class="img-responsive" src="assets/images/portfolio/05.jpg" alt="">
+                  <div class="portfolio-info">
+                    <h3>Portfolio Item 5</h3>
+                    <a class="preview" href="assets/images/portfolio/full.jpg" rel="prettyPhoto">
+                      <img src="assets/images/portfolio/expand.png" alt="">
+
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!--/.portfolio-item-->
+
+              <div class="portfolio-item Business">
+                <div class="portfolio-item-inner">
+                  <img class="img-responsive" src="assets/images/portfolio/06.jpg" alt="">
+                  <div class="portfolio-info">
+                    <h3>Portfolio Item 5</h3>
+                    <a class="preview" href="assets/images/portfolio/full.jpg" rel="prettyPhoto">
+                      <img src="assets/images/portfolio/expand.png" alt="">
+
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!--/.portfolio-item-->
+
+            </div>
+          </div>
+          <!--/.container-->
+        </section>
+        <!--/#portfolio-->
+
+        <section id="testimonial">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-8 col-sm-offset-2">
+
+                <div id="carousel-testimonial" class="carousel slide text-center" data-ride="carousel">
+                  <!-- Wrapper for slides -->
+                  <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                      <p><img class="img-circle img-thumbnail" src="assets/images/testimonial/01.jpg" alt=""></p>
+                      <h4>征程</h4>
+                      <small>OUTPOST会员 - 第①期</small>
+                      <p>「 一切差距，其实都是认知升级的差距。<br/>
+                        看到认知升级，光焦虑无用，你得学会升级自己的认知系统，<br/>进而升级自己的操作系统。」</p>
+                    </div>
+                    <div class="item">
+                      <p><img class="img-circle img-thumbnail" src="assets/images/testimonial/01.jpg" alt=""></p>
+                      <h4>火炎焱燚</h4>
+                      <small>OUTPOST会员 - 第②期</small>
+                      <p>
+                        「 我喜欢的人在努力，我的情敌在努力。<br/>
+                        如果我不努力，我怎么配得上她呢？<br/>得到一样东西最有效的办法就是让自己配得上它。」
+                      </p>
+                    </div>
+                    <div class="item">
+                      <p><img class="img-circle img-thumbnail" src="assets/images/testimonial/01.jpg" alt=""></p>
+                      <h4>Neil</h4>
+                      <small>OUTPOST会员 - 第③期</small>
+                      <p>
+                        「 没有完整价值观的人，对待生活只能是应激反应。<br/>
+                        之前太沉迷于时间管理，情绪管理这些术的层面了。<br/>重塑价值观，才是当务之急。」</p>
+                    </div>
+                  </div>
+
+                  <!-- Controls -->
+                  <div class="btns">
+                    <a class="btn btn-primary btn-sm" href="#carousel-testimonial" role="button" data-slide="prev">
+                      <span class="fa fa-angle-left" aria-hidden="true"></span>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="btn btn-primary btn-sm" href="#carousel-testimonial" role="button" data-slide="next">
+                      <span class="fa fa-angle-right" aria-hidden="true"></span>
+                      <span class="sr-only">Next</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!--/#testimonial-->
+
+        <section id="contact-area">
+          <div class="container">
+            <div class="row">
+              <div class="section-header">
+                <h2 class="section-title text-center wow fadeInDown animated" style="visibility: visible;">快捷留言</h2>
+                <p class="text-center wow fadeInDown animated" style="visibility: visible;">留下你的任何疑问与意见或建议，我们将在1个工作日给到反馈</p>
+              </div>
+              <form id="main-contact-form" name="contact-form" method="post" action="#">
+                <div class="col-lg-6 animated animate-from-left" style="opacity: 1; left: 0px;">
+
+                  <div class="form-group">
+                    <label for="name">姓名</label>
+                    <input id="name" type="text" name="name" class="form-control" placeholder="请留全名" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="email">邮箱</label>
+                    <input type="email" id="email" name="email" class="form-control" placeholder="Email" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="subject">标题</label>
+                    <input type="text" id="subject" name="subject" class="form-control" placeholder="类别/主题/项目/..." required>
+                  </div>
+
+                </div>
+                <div class="col-lg-6 animated animate-from-right" style="opacity: 1; right: 0px;">
+                  <div class="form-group">
+                    <label for="message">留言</label>
+                    <textarea name="message" id="message" class="form-control" rows="8" placeholder="疑问/意见/建议/..." required></textarea>
+                  </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="text-center">
+
+                  <button type="submit" class="btn btn-primary btn-lg btn-send-msg">送出</button>
+
+                </div>
+
+              </form>
+
+            </div>
+          </div>
+        </section>
+        <!--/#bottom-->
+
+        <footer id="footer">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-12">
+                <p class="text-center">
+                  &copy; 2017 OUTPOST. Designed by
+                  <a target="_blank" href="http://themeinthebox.com" title="Free Twitter Bootstrap WordPress Themes and HTML templates">GUYAN</a>
+                </p>
+
+                <ul class="social-icons text-center">
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-weixin"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-weibo"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-google-plus"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </footer>
+        <!--/#footer-->
+
+        <script src="assets/javascripts/jquery.js"></script>
+        <script src="assets/javascripts/bootstrap.min.js"></script>
+        <script src="assets/javascripts/owl.carousel.min.js"></script>
+        <script src="assets/javascripts/mousescroll.js"></script>
+        <script src="assets/javascripts/jquery.prettyPhoto.js"></script>
+        <script src="assets/javascripts/jquery.isotope.min.js"></script>
+        <script src="assets/javascripts/jquery.inview.min.js"></script>
+        <script src="assets/javascripts/wow.min.js"></script>
+        <script src="assets/javascripts/main.js"></script>
+      </body>
+    </html>

@@ -11,33 +11,24 @@
 // about supported directives.
 //
 
-
-//= require bootstrap.min
 //= require jquery
-//= require jquery_OLD
-//= require wow.min
 //= require jquery_ujs
-//= require turbolinks
-//= require jquery.inview.min
+//= require bootstrap.min
+//= require bootstrap/alert
 //= require bootstrap-sprockets
+//= require bootstrap/dropdown
+//= require bootstrap/carousel
+//= require jquery.min
+//= require jquery.inview.min
 //= require jquery.isotope.min
 //= require jquery.prettyPhoto
-//= require jquery.min
 //= require main
+//= require wow.min
 //= require mousescroll
 //= require owl.carousel.min
-
-
-
-
-
-
-
-
-
-
-
+//= require jquery_OLD
 //= require_tree .
+
 
 $(document).on('click', '.working', function () {
 	alert('功能暂未完成，敬请期待...')
